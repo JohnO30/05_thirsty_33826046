@@ -1,0 +1,14 @@
+<nav class="navbar">
+    <div class="nav-content">
+        <div class="nav-brand">
+            <a href="/"><%= shopName %></a>
+        </div>
+        <ul class="nav-menu">
+            <li><a href="/" class="<%= path === '/' ? 'active' : '' %>">Home</a></li>
+            <li><a href="/about" class="<%= path === '/about' ? 'active' : '' %>">About</a></li>
+            <li><a href="/search" class="<%= path === '/search' ? 'active' : '' %>">Search</a></li>
+            <li><a href="/survey" class="<%= path === '/survey' ? 'active' : '' %>">Survey</a></li>
+            <li><a href="/register" class="<%= path === '/register' ? 'active' : '' %>">Register</a></li>
+        </ul>
+    </div>
+</nav>

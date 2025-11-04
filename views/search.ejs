@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>Welcome to Disco Drinks</title>
+  <link rel="stylesheet" href="/css/style.css"> <!-- Link to external CSS stylesheet -->
+</head>
+
+<body>
+  <%- include('partials/navbar.ejs') %>
+  <!-- Main container for the content -->
+  <div class="container"> 
+    <!-- Card element for styling -->
+    <div class="card">
+      <!-- Main heading -->
+      <h1>Welcome to Disco Drinks</h1> 
+      <!-- Subheading -->
+      <h2>This is the search page</h2>
+      <!-- Form to submit search data -->
+      <form action="/search_result" method="GET"> 
+        <!-- Label for the name input -->
+        <label for="search_text">Name:</label> 
+        <!-- Input field for name -->
+        <input id="search_text" type="text" name="search_text">
+        <!-- Label for the category input -->
+        <label for="category">Category:</label> 
+        <!-- Input field for category -->
+        <input id="category" type="text" name="category"> 
+        <!-- Submit button -->
+        <input type="submit" value="OK"> 
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

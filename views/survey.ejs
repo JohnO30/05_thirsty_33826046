@@ -1,0 +1,76 @@
+<!doctype html>
+<html>
+<head>
+    <title><%= shopName %> - Customer Survey</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container">
+        <div class="card">
+            <h1>Customer Survey</h1>
+            <p class="muted">Please help us improve our service by completing this survey.</p>
+
+            <form method="POST" action="/survey-results">
+                <!-- Personal Information -->
+                <div class="form-section">
+                    <h2>Personal Information</h2>
+                    <div class="form-row">
+                        <label for="first">First Name:</label>
+                        <input id="first" type="text" name="first" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="surname">Surname:</label>
+                        <input id="surname" type="text" name="surname" required>
+                    </div>
+                    <div class="form-row">
+                        <label for="email">Email Address:</label>
+                        <input id="email" type="email" name="email" required 
+                               pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" 
+                               title="Please enter a valid email address">
+                    </div>
+                </div>
+
+                <!-- Survey Questions -->
+                <div class="form-section">
+                    <h2>Survey Questions</h2>
+                    
+                    <!-- Age Question -->
+                    <div class="form-row">
+                        <label for="age">How old are you?</label>
+                        <input id="age" type="number" name="age" required min="18" max="120">
+                    </div>
+
+                    <!-- Drink Categories -->
+                    <div class="form-row">
+                        <label>Which of the following drinks categories do you consume?</label>
+                        <div class="radio-group">
+                            <% for(let i = 0; i < productCategories.length; i++) { %>
+                                <div class="radio-item">
+                                    <input type="radio" 
+                                           id="category<%= i %>" 
+                                           name="drinkCategory" 
+                                           value="<%= productCategories[i] %>"
+                                           <%= i === 0 ? 'required' : '' %>>
+                                    <label for="category<%= i %>"><%= productCategories[i] %></label>
+                                </div>
+                            <% } %>
+                        </div>
+                    </div>
+
+                    <!-- Student Status -->
+                    <div class="form-row checkbox-row">
+                        <input type="checkbox" id="isStudent" name="isStudent" value="yes">
+                        <label for="isStudent">Are you a student?</label>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="form-row">
+                    <input type="submit" value="Submit Survey">
+                </div>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

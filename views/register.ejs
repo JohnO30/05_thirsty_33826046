@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+<head>
+  <title><%= shopName %></title>
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+  <%- include('partials/navbar.ejs') %>
+  <!-- Container for the content -->
+  <div class="container">
+    <!-- Card element for styling -->
+    <div class="card">
+      <!-- Main heading for the registration page -->
+      <h1>This is the register page</h1>
+      <!-- Form to register a user -->
+      <form method="POST" action="/registered">
+        <!-- Form row for the first name -->
+        <div class="form-row">
+          <label for="first">First Name:</label>
+          <input id="first" type="text" name="first" required />
+        </div>
+        <div class="form-row">
+          <label for="last">Last Name:</label>
+          <input id="last" type="text" name="last" required />
+        </div>
+        <div class="form-row">
+          <label for="email">Email:</label>
+          <input id="email" type="email" name="email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+            title="Please enter a valid email address" />
+        </div>
+        <div class="form-row">
+          <button type="submit">Register</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+    <title><%= shopName %> - Survey Results</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <%- include('partials/navbar.ejs') %>
+    <div class="container">
+        <div class="card">
+            <h1>Thank You for Your Response!</h1>
+            <p class="muted">Here's a summary of your survey submission:</p>
+
+            <div class="survey-results">
+                <h2>Personal Information</h2>
+                <div class="result-row">
+                    <strong>Name:</strong> <%= first %> <%= surname %>
+                </div>
+                <div class="result-row">
+                    <strong>Email:</strong> <%= email %>
+                </div>
+
+                <h2>Survey Responses</h2>
+                <div class="result-row">
+                    <strong>Age:</strong> <%= age %>
+                </div>
+                <div class="result-row">
+                    <strong>Preferred Drink Category:</strong> <%= drinkCategory %>
+                </div>
+                <div class="result-row">
+                    <strong>Student Status:</strong> <%= isStudent === 'yes' ? 'Yes' : 'No' %>
+                </div>
+            </div>
+
+            <div class="action-links">
+                <a href="/survey" class="button">Take Another Survey</a>
+                <a href="/" class="button">Return to Homepage</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

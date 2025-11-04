@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+
+<head>
+  <!-- Title of the page, dynamically set to shopName -->
+  <title>Welcome to <%=shopName%></title> 
+  <!-- Link to the external CSS stylesheet -->
+  <link rel="stylesheet" href="/css/style.css"> 
+</head>
+
+<body>
+  <%- include('partials/navbar.ejs') %>
+  <!-- Main container for the content -->
+  <div class="container"> 
+    <!-- Card element for styling -->
+    <div class="card"> 
+      <h1>
+        <!-- Main heading displaying the shop name -->
+        <%=shopName%> Shop 
+      </h1>
+      <h2>Here are some things that we sell:</h2> <!-- Subheading for the product list -->
+      <!-- Unordered list for product categories -->
+      <ul class="products"> 
+        <!-- Loop through product categories -->
+        <% for(let i=0; i < productCategories.length; i++) { %> 
+          <li>
+            <!-- Display each product category -->
+            <%= productCategories[i] %> 
+          </li>
+        <% } %>
+      </ul>
+    </div>
+  </div>
+</body>
+
+</html>
