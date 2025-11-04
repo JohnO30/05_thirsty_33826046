@@ -40,14 +40,14 @@ This project demonstrates dynamic content rendering with EJS templates, modular 
 ├── package.json          # Project metadata and dependencies
 ├── package-lock.json
 └── .gitignore
-
+ ```
 ## Installation & Setup
 
 ## Clone or extract this repository:
 ```bash
 git clone https://github.com/JohnO30/05_thirsty_33826046.git
 cd 05_thirsty_33826046
- ```
+```
 
 # Install dependencies:
 ```bash
